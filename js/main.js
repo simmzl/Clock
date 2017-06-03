@@ -67,10 +67,18 @@ function showDial(){
     }
 
     var tranS = document.getElementById("imgSec");
-    tranS.style.transform= "rotate("+ sd + "deg)";
+    //tranS.style.transform= "rotate("+ sd + "deg)";
+    //又一种方法cssText
+    tranS.style.cssText="-webkit-transform: rotate("+ sd + "deg)";
+    tranS.style.cssText="-moz-transform: rotate("+ sd + "deg)";
+    tranS.style.cssText="-ms-transform: rotate("+ sd + "deg)";
+    tranS.style.cssText="-o-transform: rotate("+ sd + "deg)";
+    tranS.style.cssText="transform: rotate("+ sd + "deg)";
+
 
     var tranM = document.getElementById("imgMin");
     tranM.style.transform= "rotate("+ md + "deg)";
+
     setTimeout("showDial()", 1000);
 }
 window.onload = showDial();
