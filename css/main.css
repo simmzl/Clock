@@ -71,6 +71,7 @@ nav input{
     font-weight: bold;
     font-size: 18px;
     color: #D9463B;
+    outline:none;
 
     /*搜索到的解决safari浏览器input样式不同的解决方案*/
     -webkit-appearance:none;

@@ -1,6 +1,18 @@
 /**
  * Created by zelong on 2017/6/3.
  */
+
+function preview() {
+    for(var i=0;i<10;i++){
+    //            var a="img"+i;
+        var a= new Image();
+        a.src = "images/"+i+ ".png";
+        //document.write(a.src );
+        //document.write("<br>");
+    }
+}
+window.onload = preview();
+
         //把数字转化为图片
     function imaNumber (a){
         var temp = "";
@@ -86,15 +98,29 @@ window.onload = showDial();
 function turn() {
     var a = document.getElementById("turnDial");
     var b = document.getElementById("turnNumber");
+
+    //显示的为a刻度且b数字不显示则修改为相反，显示状态为白色背景
     if ((a.style.display == "inline") &&  (b.style.display == "none") ){
+
+        //显示数字
         a.style.display ="none";
         b.style.display ="inline";
         document.getElementById("kedu").style.backgroundColor ="#F0F0F0";
         document.getElementById("number").style.backgroundColor ="white";
+        document.getElementById("number").onclick = null;
+        document.getElementById("kedu").onclick = function(){
+            turn();
+        }
     }else{
+
+        //显示刻度
         a.style.display ="inline";
         b.style.display ="none";
         document.getElementById("kedu").style.backgroundColor ="white";
         document.getElementById("number").style.backgroundColor ="#F0F0F0";
+        document.getElementById("kedu").onclick = null;
+        document.getElementById("number").onclick = function(){
+            turn();
+        }
     }
 }
